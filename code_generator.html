@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Code Generator</title>
+<style>
+/* هنا يمكنك تعديل أسلوب التصميم وفقًا لاحتياجاتك */
+.container {
+  background-color: #000000;
+  color: #fff;
+  max-width: 600px;
+  margin: 150px auto 50px; /* تعديل هنا: زيادة الهامش العلوي والحد الأسفلي والإبقاء على الهامش الأيسر والأيمن كما هو */
+  padding: 25px;
+  border: 5px solid #333;
+  border-radius: 15px;
+}
+
+body {
+  background-image: url('https://cdn.discordapp.com/avatars/1110137824444952648/ed2ca995ff679e63e830eaa5f8406798?size=1024'); /* استبدل 'path/to/your/image.jpg' بمسار الصورة الخاصة بك */
+  background-size: contain; /* لتصغير الصورة والسماح لها بالتناسب داخل الشاشة */
+  background-position: center top; /* لتحديد موضع الصورة في الوسط عمودياً ونقلها قليلاً نحو الأسفل */
+  margin: 0; /* إزالة الهامش الافتراضي من الجسم */
+  padding: 0; /* إزالة التبعيض الافتراضي من الجسم */
+}
+
+
+header {
+  background-color: #000000;
+  text-align: center;
+  margin-bottom: 20px;
+  padding-top: 30px;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+}
+
+h1 {
+  color: #333;
+}
+
+nav a {
+  margin-right: 10px;
+  text-decoration: none;
+  color: #ffffff;
+}
+
+nav a:hover {
+  color: #a2ff00;
+}
+
+textarea {
+  width: 100%;
+  height: 4px;
+  margin-bottom: 10px;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #2b00ff;
+  color: #ffffff;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #ff0000;
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.output-code {
+  text-align: center;
+  height: 100px;  opacity: 0;
+  animation: fadeIn 0.5s ease forwards;
+}
+</style>
+</head>
+<body>
+<header>
+  <nav>
+    <a href="code_generator.html">تصنيع الاكواد </a>
+    <a href="https://discord.gg/angmon">الدسكورد</a> 
+    <!-- يمكنك إضافة المزيد من الأزرار هنا -->
+  </nav>
+</header>
+<div class="container">
+  <h2>Generate Code</h2>
+  <p>vip </p>
+  <p>coins</p>
+  <p>premium</p>
+  <input type="text" id="inputText" placeholder="Enter your keyword here...">
+  <button onclick="generateCode()">Generate Code</button>
+  <div id="output" class="output-code"></div>
+</div>
+<script>
+function generateCode() {
+  var inputText = document.getElementById('inputText').value.toLowerCase();
+  var outputDiv = document.getElementById('output');
+  var code = '';
+
+  switch(inputText) {
+    case 'vip':
+      code = generateRandomCode();
+      break;
+     case 'premium':
+      code = generateRandomCode();
+      break;
+      case 'coins':
+      code = generateRandomCode();
+      break;
+  }
+
+  outputDiv.innerText = code;
+  outputDiv.classList.remove('output-code'); // Remove class to reapply animation
+  void outputDiv.offsetWidth; // Trigger reflow to restart animation
+  outputDiv.classList.add('output-code'); // Add class to reapply animation
+}
+
+function generateRandomCode() {
+  var characters = 'QWERTYUIOPASDFGHJKLZXCVBNMqwertyuiopasdfghjklzxcvbnm1234567890';
+  var codeLength = 8;
+  var code = '';
+
+  for (var i = 0; i < codeLength; i++) {
+    code += characters.charAt(Math.floor(Math.random() * characters.length));
+  }
+
+  return code;
+}
+</script>
+</body>
+</html>

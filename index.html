@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>angmon.io login</title>
+<style>
+.container {
+   background-color: black;
+   color: rgb(0, 155, 155);
+    max-width: 400px;
+      margin: 150px auto;
+    padding: 35px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+input[type="text"],
+input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+body {
+  background-image: url('https://cdn.discordapp.com/avatars/1110137824444952648/ed2ca995ff679e63e830eaa5f8406798?size=1024'); /* استبدل 'path/to/your/image.jpg' بمسار الصورة الخاصة بك */
+  background-size: contain; /* لجعل الصورة تمتلئ بالكامل في الشاشة */
+  background-position: center top; /* لتحديد موضع الصورة في الوسط */
+  margin: 0; /* إزالة الهامش الافتراضي من الجسم */
+  padding: 0; /* إزالة التبعيض الافتراضي من الجسم */
+}
+
+button {
+    padding: 10px 20px;
+     background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+</style>
+</head>
+<body>
+  
+   <div class="container">
+      <h2> Angmon.io admin Login</h2>
+      <input type="text" id="username" placeholder="Enter your username...">
+      <input type="password" id="password" placeholder="Enter your password...">
+      <button onclick="login()">Login</button>
+  <div id="message"></div>
+</div>
+<script>
+const correctUsername = "admin";
+const correctPassword = "admin";
+
+function login() {
+  var usernameInput = document.getElementById('username').value;
+  var passwordInput = document.getElementById('password').value;
+  var messageDiv = document.getElementById('message');
+
+  if (usernameInput === correctUsername && passwordInput === correctPassword) {
+         messageDiv.style.color = 'green';
+        messageDiv.innerText = 'Login successful!';
+       window.location.href = "code_generator.html"; // Redirect to code generator page
+  } else {
+     messageDiv.style.color = 'red';
+     messageDiv.innerText = 'Incorrect username or password. Please try again.';
+  }
+}
+</script>
+</body>
+</html>
